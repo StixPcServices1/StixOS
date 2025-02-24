@@ -21,3 +21,4 @@
 - Mixed Reality
 - Virtualization Based Security (VBS)
 - Snipping Tool (Replaced With Lightshot)
+- Some Game Cheats
