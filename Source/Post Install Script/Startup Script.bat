@@ -38,23 +38,6 @@ endlocal
 timeout /t 2 /nobreak >nul
 cls
 
-echo Fixing CPU Instruction Sets
-timeout /t 2 /nobreak >nul
-cls
-echo Detecting CPU Type...
-timeout /t 1 /nobreak >nul
-For /F "Tokens=*" %%A In ('wmic cpu get name ^| Findstr /R /C:"."') Do Set CPUName=%%A
-echo Detected !CPUName!
-timeout /t 2 /nobreak >nul
-cls
-echo Enabling MKL Instructions
-Setx LD_PRELOAD ./libtrick.so /M > NUL 2>&1
-Setx MKL_ENABLE_INSTRUCTIONS AVX2 /M > NUL 2>&1
-cls
-echo Fixed CPU Instruction Sets for !CPUName!
-timeout /t 2 /nobreak >nul
-cls
-
 echo Importing StixOS Powerplan
 powercfg -import "C:\Users\Administrator\Desktop\[+] StixOS\Startup Script Resources\Powerplan\StixOS Powerplan"
 control powercfg.cpl
